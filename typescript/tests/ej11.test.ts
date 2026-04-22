@@ -2,7 +2,7 @@
 import { describe, it, expect } from "vitest";
 import { withAuth, withLogging, Handler, Request } from "../src/ej11";
 
-const baseHandler: Handler = (req) => ({ status: 200, body: { ok: true } });
+const baseHandler: Handler = (req) => ({ status: 200, body: { ok: true } }); //Si paso todos los filtros devuelve 200
 
 function makeReq(authHeader?: string): Request {
   return {

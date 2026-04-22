@@ -4,21 +4,22 @@
 
 ;; Retorna {:status :ok :value value} si no vacío, {:status :error :error "FIELD es obligatorio"}.
 (defn required-field [field-name value]
-  ;; TODO: implementar
-  )
+  (if (str/blank? value) ;;str/blank? devuelve true si el string es nil, vacío o solo contiene espacios en blanco
+    {:status :error :error (str field-name " es obligatorio")}
+    {:status :ok :value value}))
 
 (def doble
-  ;; TODO: (partial * 2)
+  (partial * 2)
   )
 
 (def triple
-  ;; TODO: (partial * 3)
+  (partial * 3) ;;Partial viene incluido en clojure
   )
 
 (def validate-name
-  ;; TODO: (partial required-field "nombre")
+  (partial required-field "nombre")
   )
 
 (def validate-email
-  ;; TODO: (partial required-field "email")
+  (partial required-field "email")
   )
